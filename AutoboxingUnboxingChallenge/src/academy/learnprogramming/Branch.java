@@ -24,7 +24,6 @@ public class Branch {
             this.customers.add(new Customer(customerName, initialAmount));
             return true;
         }
-
         return false;
     }
 
@@ -34,7 +33,6 @@ public class Branch {
             existingCustomer.addTransaction(amount);
             return true;
         }
-
         return false;
     }
 
@@ -45,7 +43,6 @@ public class Branch {
                 return checkedCustomer;
             }
         }
-
         return null;
     }
 }

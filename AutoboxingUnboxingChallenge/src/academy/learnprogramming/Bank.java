@@ -16,7 +16,6 @@ public class Bank {
             this.branches.add(new Branch(branchName));
             return true;
         }
-
         return false;
     }
 
@@ -25,7 +24,6 @@ public class Bank {
         if(branch != null) {
             return branch.newCustomer(customerName, initialAmount);
         }
-
         return false;
     }
 
@@ -34,7 +32,6 @@ public class Bank {
         if(branch != null) {
             return branch.addCustomerTransaction(customerName, amount);
         }
-
         return false;
     }
 
@@ -45,7 +42,6 @@ public class Bank {
                 return checkedBranch;
             }
         }
-
         return null;
     }
 

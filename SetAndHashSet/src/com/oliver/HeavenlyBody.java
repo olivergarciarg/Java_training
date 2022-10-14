@@ -7,10 +7,21 @@ public final class HeavenlyBody {
     private final String name;
     private final double orbitalPeriod;
     private final Set<HeavenlyBody> satellites =  new HashSet<>();
+    private final BodyTypes bodyType;
 
-    public HeavenlyBody(String name, double orbitalPeriod) {
+    public enum BodyTypes {
+        STAR,
+        PLANET,
+        DWARF_PLANET,
+        MOON,
+        COMET,
+        ASTEROID
+    }
+
+    public HeavenlyBody(String name, double orbitalPeriod, BodyTypes bodyType) {
         this.name = name;
         this.orbitalPeriod = orbitalPeriod;
+        this.bodyType = bodyType;
     }
 
     public String getName() {
@@ -25,7 +36,11 @@ public final class HeavenlyBody {
         return new HashSet<>(this.satellites);
     }
 
-    public boolean addMoon(HeavenlyBody moon) {
+    public BodyTypes getBodyType() {
+        return bodyType;
+    }
+
+    public boolean addSatellite(HeavenlyBody moon) {
         return this.satellites.add(moon);
     }
 

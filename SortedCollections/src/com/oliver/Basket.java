@@ -1,8 +1,8 @@
 package com.oliver;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
-import java.util.TreeMap;
 
 public class Basket {
     private final String name;
@@ -10,7 +10,7 @@ public class Basket {
 
     public Basket(String name) {
         this.name = name;
-        this.list =  new TreeMap<>();
+        this.list =  new HashMap<>();
     }
 
     public int addToBasket(StockItem item, int quantity) {

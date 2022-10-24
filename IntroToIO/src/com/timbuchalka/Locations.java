@@ -7,22 +7,6 @@ public class Locations implements Map<Integer, Location> {
     private static Map<Integer, Location> locations = new LinkedHashMap<Integer, Location>();
 
     public static void main(String[] args) throws IOException {
-//        try (DataOutputStream locFile = new DataOutputStream(new BufferedOutputStream(new FileOutputStream("locations.dat")));) {
-//            for (Location location: locations.values()) {
-//                locFile.writeInt(location.getLocationID());
-//                locFile.writeUTF(location.getDescription());
-//                System.out.println("writing location " + location.getLocationID() + ": " + location.getDescription());
-//                System.out.println("writing " + (location.getExits().size() -1) + " exits");
-//                locFile.writeInt(location.getExits().size() -1);
-//                for (String direction: location.getExits().keySet()) {
-//                    if (!direction.equalsIgnoreCase("Q")) {
-//                        System.out.println("\t\t" + direction + ", " + location.getExits().get(direction));
-//                        locFile.writeUTF(direction);
-//                        locFile.writeInt(location.getExits().get(direction));
-//                    }
-//                }
-//            }
-//        }
         try (ObjectOutputStream locFile = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("locations.dat")));) {
             for (Location location: locations.values()) {
                 locFile.writeObject(location);
@@ -44,25 +28,8 @@ public class Locations implements Map<Integer, Location> {
                     eof = true;
                 }
             }
-//            while (!eof) {
-//                try {
-//                    Map<String, Integer> exits =  new LinkedHashMap<>();
-//                    int locID = locFile.readInt();
-//                    String description = locFile.readUTF();
-//                    int numExits = locFile.readInt();
-//                    System.out.println("read location " + locID + ": " + description);
-//                    System.out.println("found " + numExits + " exits");
-//                    for (int i=0; i<numExits; i++) {
-//                        String direction = locFile.readUTF();
-//                        int destination = locFile.readInt();
-//                        exits.put(direction, destination);
-//                        System.out.println("\t\t" + direction + ", " + destination);
-//                    }
-//                    locations.put(locID, new Location(locID,description, exits));
-//                } catch (EOFException e) {
-//                    eof = true;
-//                }
-//            }
+        } catch (InvalidClassException e) {
+            System.out.println("InvalidClassException " + e.getMessage());
         } catch (IOException io) {
             System.out.println("IO Exception " + io.getMessage());
         } catch (ClassNotFoundException e) {

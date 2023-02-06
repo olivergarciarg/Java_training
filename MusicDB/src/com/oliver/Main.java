@@ -46,6 +46,19 @@ public class Main {
 
         dataSource.createViewForSongArtists();
 
+        String title = "Go Your Own Way";
+        songArtists = dataSource.querySongInfoView(title);
+        if (songArtists.isEmpty()) {
+            System.out.println("no songs");
+            return;
+        }
+
+        for (SongArtist artist: songArtists) {
+            System.out.println(artist.getArtistName() + "-" + artist.getAlbumName() + "-" + artist.getTrack());
+        }
+
+        dataSource.insertSong("Touch of Grey","Grateful Dead","In The Dark", 1);
+
         dataSource.close();
     }
 }

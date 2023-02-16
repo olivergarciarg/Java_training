@@ -6,11 +6,13 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.SocketTimeoutException;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         try (Socket socket = new Socket("localhost", 5000)) {
+            socket.setSoTimeout(5000);
             BufferedReader echoes = new BufferedReader(
                     new InputStreamReader(socket.getInputStream())
             );
@@ -28,7 +30,9 @@ public class Main {
                     response = echoes.readLine();
                     System.out.println(response);
                 }
-            } while(!echoString.equals("exit"));
+            } while (!echoString.equals("exit"));
+        } catch (SocketTimeoutException e) {
+            System.out.println("timed out");
         } catch (IOException e) {
             System.out.println("client error " + e.getMessage());
         }

@@ -7,5 +7,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="academy.learnprogramming.common" />
+    <orderEntry type="module" module-name="academy.learnprogramming.db" />
   </component>
 </module>

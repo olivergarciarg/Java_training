@@ -1,8 +1,9 @@
-package com.example.v2047helloworldfx;
+package sample;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
@@ -11,29 +12,30 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+public class Main extends Application {
 
-public class HelloApplication extends Application {
     @Override
-    public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+    public void start(Stage primaryStage) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+
 //        GridPane root = new GridPane();
 //        root.setAlignment(Pos.CENTER);
 //        root.setVgap(10);
 //        root.setHgap(10);
+//
 //        Label greeting = new Label("Welcome to JavaFX!");
 //        greeting.setTextFill(Color.GREEN);
 //        greeting.setFont(Font.font("Times New Roman", FontWeight.BOLD, 70));
+//
 //        root.getChildren().add(greeting);
-//        Scene scene = new Scene(root, 700, 240);
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
 
-        stage.setTitle("Hello java FX!");
-        stage.setScene(scene);
-        stage.show();
+        primaryStage.setTitle("Hello JavaFX!");
+        primaryStage.setScene(new Scene(root, 700, 275));
+        primaryStage.show();
     }
 
+
     public static void main(String[] args) {
-        launch();
+        launch(args);
     }
 }

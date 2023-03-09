@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<!--<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"-->
-<!--      fx:controller="com.example.v211_layouts.HelloController">-->
-<!--    <padding>-->
-<!--        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>-->
-<!--    </padding>-->
-
-<!--    <Label fx:id="welcomeText"/>-->
-<!--    <Button text="Hello!" onAction="#onHelloButtonClick"/>-->
-<!--</VBox>-->
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.HBox?>
-<HBox fx:controller="com.example.v211_layouts.HelloController" xmlns:fx="http://javafx.com/fxml"
-      alignment="bottom_right" style="-fx-border-color: red; -fx-border-width: 3; -fx-border-style: dashed"
-      spacing="10">
-    <padding>
-        <Insets bottom="10" right="10"/>
-    </padding>
-    <Button text="Ok" prefWidth="90"/>
-    <Button text="Cancel" prefWidth="90"/>
-    <Button text="Help" prefWidth="90"/>
-</HBox>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.Label?>
+<BorderPane fx:controller="com.example.v211_layouts.HelloController" xmlns:fx="http://javafx.com/fxml">
+    <top>
+        <Label text="this label is in the top position" alignment="CENTER"
+               BorderPane.alignment="CENTER"
+        style="-fx-border-color: blue;-fx-border-width: 3;-fx-border-style: dashed"/>
+    </top>
+    <center>
+        <Label text="This label is in the center xxxxxxxxxx rffffff rrrrrrrrr eeeeeeeeeee 33333333333333" alignment="CENTER"/>
+    </center>
+    <left>
+        <Label text="This label is in the left" alignment="CENTER"/>
+    </left>
+    <right>
+        <Label text="This label is in the right" alignment="CENTER"/>
+    </right>
+    <bottom>
+        <HBox spacing="10" alignment="BOTTOM_RIGHT">
+            <padding>
+                <Insets bottom="10" right="10"/>
+            </padding>
+            <Button text="Ok" prefWidth="90"/>
+            <Button text="Cancel" prefWidth="90"/>
+            <Button text="Help" prefWidth="90"/>
+        </HBox>
+    </bottom>
+</BorderPane>
+

@@ -2,10 +2,32 @@
 <?import javafx.scene.layout.BorderPane?>
 
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Font?>
 <BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.todolist.HelloController">
     <left>
         <ListView fx:id="todoListView">
 
         </ListView>
     </left>
+    <center>
+        <VBox style="-fx-background-color: white">
+            <TextArea fx:id="itemDetailsTextArea" VBox.vgrow="ALWAYS"/>
+            <HBox>
+                <Label text="Due: " style="-fx-background-color: white">
+                    <font>
+                        <Font size="20" name="Times New Roman bold"/>
+                    </font>
+                </Label>
+                <Label fx:id="deadlineLabel" style="-fx-background-color: white">
+                    <font>
+                        <Font size="20" name="Times New Roman bold"/>
+                    </font>
+                </Label>
+            </HBox>
+        </VBox>
+    </center>
 </BorderPane>

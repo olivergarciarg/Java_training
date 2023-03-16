@@ -1,18 +1,29 @@
 package com.example.todolist;
 
 import com.example.todolist.datamodel.TodoItem;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
+import javafx.scene.control.TextArea;
 
 import java.time.LocalDate;
 import java.time.Month;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
 public class HelloController {
     @FXML
-    private ListView todoListView;
+    private ListView<TodoItem> todoListView;
+
+    @FXML
+    private TextArea itemDetailsTextArea;
+
+    @FXML
+    private Label deadlineLabel;
 
     private List<TodoItem> todoItems;
 
@@ -30,7 +41,21 @@ public class HelloController {
         todoItems.add(item3);
         todoItems.add(item4);
         todoItems.add(item5);
+
+        todoListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<TodoItem>() {
+            @Override
+            public void changed(ObservableValue<? extends TodoItem> observableValue, TodoItem OldValue, TodoItem newValue) {
+                if (newValue != null) {
+                    TodoItem item = (TodoItem) todoListView.getSelectionModel().getSelectedItem();
+                    itemDetailsTextArea.setText(item.getDetails());
+                    DateTimeFormatter df = DateTimeFormatter.ofPattern("MMMM d, yyyy");
+                    deadlineLabel.setText(df.format(item.getDeadline()));
+                }
+            }
+        });
+
         todoListView.getItems().setAll(todoItems);
         todoListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+        todoListView.getSelectionModel().selectFirst();
     }
 }

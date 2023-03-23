@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Hyperlink?>
+<GridPane alignment="CENTER" xmlns:fx="http://javafx.com/fxml"
+          fx:controller="com.example.javafxapplication.HelloController" hgap="10" vgap="10"
+          stylesheets="@styles.css" fx:id="gridPane">
+    <Button text="Open..." GridPane.rowIndex="0" GridPane.columnIndex="0" onAction="#handleClick"/>
+    <Button text="Button 2" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+    <Button id="button3" text="Button 3" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+    <Button fx:id="button4" text="Button 4" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+    <Button text="Button 5" GridPane.rowIndex="0" GridPane.columnIndex="4"/>
+    <RadioButton text="choice 1" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <Label fx:id="label" text="java FX effects" GridPane.rowIndex="1" GridPane.columnIndex="1"
+        onMouseEntered="#handleMouseEnter" onMouseExited="#handleMouseExit" rotate="90"/>
+
+    <Hyperlink text="www.javafx.com" GridPane.rowIndex="3" GridPane.columnIndex="0" onAction="#handleLinkClick"/>
+</GridPane>

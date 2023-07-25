@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contacts>
+<contact>
+	<first_name>oo</first_name>
+	<last_name>oo</last_name>
+	<phone_number>1111</phone_number>
+	<notes>pppp</notes>
+</contact>
+<contact>
+	<first_name>x</first_name>
+	<last_name>x</last_name>
+	<phone_number>222</phone_number>
+	<notes>xxx</notes>
+</contact>
+<contact>
+	<first_name>t</first_name>
+	<last_name>t</last_name>
+	<phone_number>5655</phone_number>
+	<notes>ttt</notes>
+</contact>
+</contacts>

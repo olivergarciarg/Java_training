@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Thymeleaf</title>
-</head>
-<body>
-    <p th:text="'Time on the server is ' + ${theDate}"/>
-</body>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Thymeleaf</title>
+    </head>
+    <body>
+        Hello Spring
+        <br><br>
+        Student name: <span th:text="${param.studentName}"/>
+        <br><br>
+        The message: <span th:text="${message}"/>
+    </body>
 </html>

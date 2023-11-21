@@ -11,5 +11,9 @@
     <span th:text="${student.country}"/>
     <br><br>
     <span th:text="${student.favoriteLanguage}"/>
+    <br><br>
+    <ul>
+        <li th:each="tempSystem : ${student.favoriteSystems}" th:text="${tempSystem}"/>
+    </ul>
 </body>
 </html>

@@ -2,16 +2,33 @@ package com.luv2code.cruddemo.entity;
 
 import jakarta.persistence.*;
 
+@Entity
+@Table(name="instructor")
 public class Instructor {
+
+    // annotate the class as an entity and map to db table
+
+    // define the fields
+
+    // annotate the fields with db column names
+
+    // ** set up mapping to InstructorDetail entity
+
+    // create constructors
+
+    // generate getter/setter methods
+
+    // generate toString() method
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name="id")
     private int id;
 
-    @Column(name = "first_name")
+    @Column(name="first_name")
     private String firstName;
 
-    @Column(name = "last_name")
+    @Column(name="last_name")
     private String lastName;
 
     @Column(name="email")
@@ -22,20 +39,12 @@ public class Instructor {
     private InstructorDetail instructorDetail;
 
     public Instructor() {
+
     }
 
-    public Instructor(String firstName, String lastName, String email, InstructorDetail instructorDetail) {
+    public Instructor(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.email = email;
-        this.instructorDetail = instructorDetail;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
         this.email = email;
     }
 
@@ -63,6 +72,14 @@ public class Instructor {
         this.lastName = lastName;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public InstructorDetail getInstructorDetail() {
         return instructorDetail;
     }
@@ -73,7 +90,12 @@ public class Instructor {
 
     @Override
     public String toString() {
-        return "Instructor [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
-                + ", instructorDetail=" + instructorDetail + "]";
+        return "Instructor{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", instructorDetail=" + instructorDetail +
+                '}';
     }
 }

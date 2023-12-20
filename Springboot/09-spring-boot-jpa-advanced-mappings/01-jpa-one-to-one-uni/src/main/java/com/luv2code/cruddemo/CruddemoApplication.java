@@ -18,12 +18,37 @@ public class CruddemoApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(AppDAO appDAO) {
 		return runner -> {
-			createInstructor(appDAO);
+//			createInstructor(appDAO);
+//			findInstructor(appDAO);
+//			deleteInstructor(appDAO);
+			findInstructorDetail(appDAO);
 		};
 	}
 
+	private void findInstructorDetail(AppDAO appDAO) {
+		int theId = 2;
+		System.out.println("Finding instructor detail with id: " + theId);
+		InstructorDetail tempInstructorDetail = appDAO.findInstructorDetailById(theId);
+		System.out.println("Found instructor detail: " + tempInstructorDetail);
+		System.out.println("Found instructor: " + tempInstructorDetail.getInstructor());
+	}
+
+	private void deleteInstructor(AppDAO appDAO) {
+		int theId = 1;
+		System.out.println("Deleting instructor with id: " + theId);
+		appDAO.deleteInstructorById(theId);
+		System.out.println("done!");
+	}
+
+	private void findInstructor(AppDAO appDAO) {
+		int theId = 2;
+		System.out.println("Finding instructor with id: " + theId);
+		Instructor tempInstructor = appDAO.findInstructorById(theId);
+		System.out.println("Found instructor: " + tempInstructor);
+	}
+
 	private void createInstructor(AppDAO appDAO) {
-		Instructor tempInstructor = new Instructor("Chad", "Darby", "darby@z.com", null);
+		Instructor tempInstructor = new Instructor("Chad2", "Darby2", "darby2@z.com");
 
 		InstructorDetail tempInstructorDetail = new InstructorDetail("http://www.luv2code.com/youtube", "Luv 2 code!!!");
 

@@ -27,8 +27,12 @@ public class AopdemoApplication {
 //			demoTheAfterThrowingAdvice(theAccountDAO);
 //			demoTheAfterAdvice(theAccountDAO);
 //			demoTheAroundAdvice(theTrafficFortuneService);
-			demoTheAroundAdviceHandleException(theTrafficFortuneService);
+//			demoTheAroundAdviceHandleException(theTrafficFortuneService);
+			demoTheAroundAdviceRethrowException(theTrafficFortuneService);
 		};
+	}
+
+	private void demoTheAroundAdviceRethrowException(TrafficFortuneService theTrafficFortuneService) {
 	}
 
 	private void demoTheAroundAdviceHandleException(TrafficFortuneService theTrafficFortuneService) {
